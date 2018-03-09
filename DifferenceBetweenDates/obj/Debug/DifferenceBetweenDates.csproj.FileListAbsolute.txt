@@ -1,0 +1,10 @@
+C:\Users\alana.sasse\source\repos\DifferenceBetweenDates\DifferenceBetweenDates\obj\Debug\DifferenceBetweenDates.csprojResolveAssemblyReference.cache
+C:\Users\alana.sasse\source\repos\DifferenceBetweenDates\DifferenceBetweenDates\obj\Debug\DifferenceBetweenDates.DateCalculation.resources
+C:\Users\alana.sasse\source\repos\DifferenceBetweenDates\DifferenceBetweenDates\obj\Debug\DifferenceBetweenDates.Properties.Resources.resources
+C:\Users\alana.sasse\source\repos\DifferenceBetweenDates\DifferenceBetweenDates\obj\Debug\DifferenceBetweenDates.csproj.GenerateResource.Cache
+C:\Users\alana.sasse\source\repos\DifferenceBetweenDates\DifferenceBetweenDates\obj\Debug\DifferenceBetweenDates.csproj.CoreCompileInputs.cache
+C:\Users\alana.sasse\source\repos\DifferenceBetweenDates\DifferenceBetweenDates\bin\Debug\DifferenceBetweenDates.exe.config
+C:\Users\alana.sasse\source\repos\DifferenceBetweenDates\DifferenceBetweenDates\bin\Debug\DifferenceBetweenDates.exe
+C:\Users\alana.sasse\source\repos\DifferenceBetweenDates\DifferenceBetweenDates\bin\Debug\DifferenceBetweenDates.pdb
+C:\Users\alana.sasse\source\repos\DifferenceBetweenDates\DifferenceBetweenDates\obj\Debug\DifferenceBetweenDates.exe
+C:\Users\alana.sasse\source\repos\DifferenceBetweenDates\DifferenceBetweenDates\obj\Debug\DifferenceBetweenDates.pdb

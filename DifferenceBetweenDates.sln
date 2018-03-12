@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DifferenceBetweenDates", "DifferenceBetweenDates\DifferenceBetweenDates.csproj", "{4B03F4EE-363E-4B28-A556-F6ACC1B68021}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DifferenceBetweenDatesTest", "DifferenceBetweenDatesTest\DifferenceBetweenDatesTest.csproj", "{075328C4-053C-4308-BF7D-5122761103BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4B03F4EE-363E-4B28-A556-F6ACC1B68021}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B03F4EE-363E-4B28-A556-F6ACC1B68021}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B03F4EE-363E-4B28-A556-F6ACC1B68021}.Release|Any CPU.Build.0 = Release|Any CPU
+		{075328C4-053C-4308-BF7D-5122761103BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{075328C4-053C-4308-BF7D-5122761103BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{075328C4-053C-4308-BF7D-5122761103BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{075328C4-053C-4308-BF7D-5122761103BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

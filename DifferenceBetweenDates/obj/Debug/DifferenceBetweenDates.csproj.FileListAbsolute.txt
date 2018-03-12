@@ -8,3 +8,13 @@ C:\Users\alana.sasse\source\repos\DifferenceBetweenDates\DifferenceBetweenDates\
 C:\Users\alana.sasse\source\repos\DifferenceBetweenDates\DifferenceBetweenDates\bin\Debug\DifferenceBetweenDates.pdb
 C:\Users\alana.sasse\source\repos\DifferenceBetweenDates\DifferenceBetweenDates\obj\Debug\DifferenceBetweenDates.exe
 C:\Users\alana.sasse\source\repos\DifferenceBetweenDates\DifferenceBetweenDates\obj\Debug\DifferenceBetweenDates.pdb
+D:\Alana\Riva\DifferenceBetweenDates\bin\Debug\DifferenceBetweenDates.exe.config
+D:\Alana\Riva\DifferenceBetweenDates\bin\Debug\DifferenceBetweenDates.exe
+D:\Alana\Riva\DifferenceBetweenDates\bin\Debug\DifferenceBetweenDates.pdb
+D:\Alana\Riva\DifferenceBetweenDates\obj\Debug\DifferenceBetweenDates.csprojResolveAssemblyReference.cache
+D:\Alana\Riva\DifferenceBetweenDates\obj\Debug\DifferenceBetweenDates.DateCalculation.resources
+D:\Alana\Riva\DifferenceBetweenDates\obj\Debug\DifferenceBetweenDates.Properties.Resources.resources
+D:\Alana\Riva\DifferenceBetweenDates\obj\Debug\DifferenceBetweenDates.csproj.GenerateResource.Cache
+D:\Alana\Riva\DifferenceBetweenDates\obj\Debug\DifferenceBetweenDates.csproj.CoreCompileInputs.cache
+D:\Alana\Riva\DifferenceBetweenDates\obj\Debug\DifferenceBetweenDates.exe
+D:\Alana\Riva\DifferenceBetweenDates\obj\Debug\DifferenceBetweenDates.pdb

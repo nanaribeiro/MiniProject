@@ -79,5 +79,33 @@ namespace DifferenceBetweenDatesTest
             }
                 
         }
+
+        [TestMethod]
+        public void TestFormat()
+        {          
+            DateController d = new DateController();
+            d.InitializeDaysOfMonth();
+            string sysDateFormat = CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern;
+            /*
+             The date format is based on the system date format, so if my machine is on MDY and
+             it is sent a date using DMY the program will treat the date as MDY.
+             */
+            long firstDate = d.CalculateDaysOfADate("6-8-1830");
+            long secondDate = d.CalculateDaysOfADate("3-11-2018");
+            //If the system date format is MDY
+            if (sysDateFormat.Equals("M/d/yyyy"))
+            {
+                Assert.AreEqual(secondDate - firstDate, 68577);
+            }
+            else if (sysDateFormat.Equals("dd/MM/yyyy"))
+            {
+                Assert.AreEqual(secondDate - firstDate, 68755);
+            }
+            else
+            {
+                Assert.AreEqual(secondDate - firstDate, -1);
+            }
+
+        }
     }
 }

@@ -8,8 +8,8 @@ namespace DifferenceBetweenDates.Model
 {
     class DateModel
     {
-        public int Day { get; set; }
-        public int Month { get; set; }
+        public long Day { get; set; }
+        public long Month { get; set; }
         public double Year { get; set; }
     }
 }

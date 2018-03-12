@@ -45,7 +45,7 @@ namespace DifferenceBetweenDates
             }
             else
             {
-                finalResult = daysOfSecondDate - daysOfFirstDate;
+                finalResult = (daysOfSecondDate - daysOfFirstDate)/86400;
                 ResultText.Text = finalResult.ToString() + " days";
             }            
         }

@@ -16,7 +16,7 @@ namespace DifferenceBetweenDates.Controller
         //Dictionary to track how many days every month has
         Dictionary<int, int> daysOfMonth = new Dictionary<int, int>();
         //To solve the LeapYear problem I multiplied 365.24 to the year instead os using 365 days
-        const double tropicalYear = 365.24;
+        const double tropicalYear = 365.23;
 
         /// <summary>
         /// Checks if the input date is on MDY format

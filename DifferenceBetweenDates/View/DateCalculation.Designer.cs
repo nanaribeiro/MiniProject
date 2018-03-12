@@ -43,7 +43,7 @@
             // 
             this.FirstDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.FirstDate.Location = new System.Drawing.Point(97, 74);
-            this.FirstDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FirstDate.Margin = new System.Windows.Forms.Padding(4);
             this.FirstDate.Name = "FirstDate";
             this.FirstDate.Size = new System.Drawing.Size(112, 22);
             this.FirstDate.TabIndex = 0;
@@ -62,7 +62,7 @@
             // 
             this.SecondDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.SecondDate.Location = new System.Drawing.Point(259, 74);
-            this.SecondDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SecondDate.Margin = new System.Windows.Forms.Padding(4);
             this.SecondDate.Name = "SecondDate";
             this.SecondDate.Size = new System.Drawing.Size(104, 22);
             this.SecondDate.TabIndex = 2;
@@ -100,7 +100,7 @@
             // ResultText
             // 
             this.ResultText.Location = new System.Drawing.Point(47, 164);
-            this.ResultText.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ResultText.Margin = new System.Windows.Forms.Padding(4);
             this.ResultText.Name = "ResultText";
             this.ResultText.ReadOnly = true;
             this.ResultText.Size = new System.Drawing.Size(316, 22);
@@ -109,7 +109,7 @@
             // CalculateButton
             // 
             this.CalculateButton.Location = new System.Drawing.Point(264, 223);
-            this.CalculateButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CalculateButton.Margin = new System.Windows.Forms.Padding(4);
             this.CalculateButton.Name = "CalculateButton";
             this.CalculateButton.Size = new System.Drawing.Size(100, 28);
             this.CalculateButton.TabIndex = 7;
@@ -121,11 +121,11 @@
             // 
             this.InformationLabel.AutoSize = true;
             this.InformationLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.InformationLabel.Location = new System.Drawing.Point(47, 274);
+            this.InformationLabel.Location = new System.Drawing.Point(44, 275);
             this.InformationLabel.Name = "InformationLabel";
-            this.InformationLabel.Size = new System.Drawing.Size(299, 17);
+            this.InformationLabel.Size = new System.Drawing.Size(347, 17);
             this.InformationLabel.TabIndex = 8;
-            this.InformationLabel.Text = "*Dates needs to be on format Month Day Year";
+            this.InformationLabel.Text = "*Dates need to be on the same format as your system";
             // 
             // DateCalculation
             // 
@@ -141,7 +141,7 @@
             this.Controls.Add(this.SecondDate);
             this.Controls.Add(this.ToLabel);
             this.Controls.Add(this.FirstDate);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "DateCalculation";
             this.Text = "Date Calculation";
             this.Load += new System.EventHandler(this.DateCalculation_Load);

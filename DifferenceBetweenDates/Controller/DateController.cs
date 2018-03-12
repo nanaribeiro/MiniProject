@@ -1,6 +1,7 @@
 ﻿using DifferenceBetweenDates.Model;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -54,41 +55,48 @@ namespace DifferenceBetweenDates.Controller
             DateModel givenDateModel = new DateModel();
             //List to hold the result from Split method
             List<string> dateSplit;
-            //It checks if the input date is on MDY format
-            if (DateIsOnMDYFormat(GivenDate))
-            {                
-                //Splits the date using the allowed separators
-                dateSplit = GivenDate.Split('/', '-', '.').ToList();
-                //Calculate the amount of days of input date
-                givenDateModel.Day = Convert.ToInt16(dateSplit[(int)MDYDate.Day]);
-                for (int i = 0; i < Convert.ToInt16(dateSplit[(int)MDYDate.Month]); i++)
-                {
-                    givenDateModel.Month += daysOfMonth[i + 1];
-                }
-                givenDateModel.Year = Convert.ToInt16(dateSplit[(int)MDYDate.Year]) * tropicalYear;
-
-                return (long)givenDateModel.Year + givenDateModel.Month + givenDateModel.Day;
-            }
-            //It checks if the input is on DMY format
-            else if(DateIsOnDMYFormat(GivenDate))
+            //Get the system date format
+            string sysDateFormat = CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern;
+            //If the system date format is MDY
+            if(sysDateFormat.Equals("M/d/yyyy"))
             {
-                //Splits the date using the allowed separators
-                dateSplit = GivenDate.Split('/', '-', '.').ToList();
-                //Calculate the amount of days of input date
-                givenDateModel.Day = Convert.ToInt16(dateSplit[(int)DMYDate.Day]);
-                for (int i = 0; i < Convert.ToInt16(dateSplit[(int)DMYDate.Month]); i++)
+                //It checks if the input date is on valid MDY format
+                if (DateIsOnMDYFormat(GivenDate))
                 {
-                    givenDateModel.Month += daysOfMonth[i + 1];
-                }
-                givenDateModel.Year = Convert.ToInt16(dateSplit[(int)DMYDate.Year]) * tropicalYear;
+                    //Splits the date using the allowed separators
+                    dateSplit = GivenDate.Split('/', '-', '.').ToList();
+                    //Calculate the amount of days of input date
+                    givenDateModel.Day = Convert.ToInt16(dateSplit[(int)MDYDate.Day]);
+                    for (int i = 0; i < Convert.ToInt16(dateSplit[(int)MDYDate.Month]); i++)
+                    {
+                        givenDateModel.Month += daysOfMonth[i + 1];
+                    }
+                    givenDateModel.Year = Convert.ToInt16(dateSplit[(int)MDYDate.Year]) * tropicalYear;
 
-                return (long)givenDateModel.Year + givenDateModel.Month + givenDateModel.Day;
+                    return (long)givenDateModel.Year + givenDateModel.Month + givenDateModel.Day;
+                }
+            }            
+            //If the system date format is DMY
+            else if(sysDateFormat.Equals("dd/MM/yyyy"))
+            {
+                //It checks if the input is on DMY format
+                if (DateIsOnDMYFormat(GivenDate))
+                {
+                    //Splits the date using the allowed separators
+                    dateSplit = GivenDate.Split('/', '-', '.').ToList();
+                    //Calculate the amount of days of input date
+                    givenDateModel.Day = Convert.ToInt16(dateSplit[(int)DMYDate.Day]);
+                    for (int i = 0; i < Convert.ToInt16(dateSplit[(int)DMYDate.Month]); i++)
+                    {
+                        givenDateModel.Month += daysOfMonth[i + 1];
+                    }
+                    givenDateModel.Year = Convert.ToInt16(dateSplit[(int)DMYDate.Year]) * tropicalYear;
+
+                    return (long)givenDateModel.Year + givenDateModel.Month + givenDateModel.Day;
+                }
             }
             //If the date is not on a valid format it will return -1;
-            else
-            {
-                return -1;
-            }
+            return -1;
         }
 
         /// <summary>

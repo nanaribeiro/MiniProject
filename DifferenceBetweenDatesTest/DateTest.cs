@@ -32,7 +32,7 @@ namespace DifferenceBetweenDatesTest
              The date format is based on the system date format, so if my machine is on MDY and
              it is sent a date using DMY the program will treat the date as MDY.
              */
-            long firstDate = d.CalculateDaysOfADate("6/8/1830");
+            long firstDate = d.CalculateDaysOfADate("29/02/2018");
             long secondDate = d.CalculateDaysOfADate("3/11/2018");
             string sysDateFormat = CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern;
             //If the system date format is MDY

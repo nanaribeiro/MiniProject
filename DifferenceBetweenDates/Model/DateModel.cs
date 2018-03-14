@@ -10,6 +10,6 @@ namespace DifferenceBetweenDates.Model
     {
         public long Day { get; set; }
         public long Month { get; set; }
-        public double Year { get; set; }
+        public long Year { get; set; }
     }
 }

@@ -21,6 +21,10 @@ namespace DifferenceBetweenDates.Controller
         private const int DaysPerYear = 365;
         // Number of days in 4 years
         private const int DaysPer4Years = DaysPerYear * 4 + 1;       // 1461
+        // Number of days in 100 years
+        private const int DaysPer100Years = DaysPer4Years * 25 - 1;  // 36524
+        // Number of days in 400 years
+        private const int DaysPer400Years = DaysPer100Years * 4 + 1; // 146097
 
         /// <summary>
         /// Checks if the input date is on MDY format
@@ -53,21 +57,52 @@ namespace DifferenceBetweenDates.Controller
         private bool IsAValidDate(long day, long month, double year)
         {
             //If it is February 29 and the year is evenly divisible by 4 and divisible by 100 and 400
-            if (month.Equals(2) && day.Equals(29) && (year % 4 == 0) && (year % 100 == 0 && year % 400 == 0))
+            if (month.Equals(2) && day.Equals(29))
             {
-                return true;
+                if((year % 4 == 0) && (year % 100 == 0 && year % 400 == 0))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
             }
 
-            return false;
+            return true;
         }
 
-        private bool IsLeapYear(int year, int day, int month)
-        {            
-            for(int i = 4; i< year; i++)
+        private int IsLeapYear(int year)
+        {
+            int divider = 1;
+            int sumDays = 0;
+            double remainingDays = 0;
+            if(year >= 400)
             {
-
+                divider = year / 400;
+                remainingDays = Math.Round(((year / 400.0) - divider) * 400);
+                sumDays += DaysPer400Years * divider;
+                if(remainingDays >=100)
+                {
+                    divider = (int)remainingDays / 100;
+                    remainingDays = Math.Round(((remainingDays / 100.0) - divider) * 100);
+                    sumDays += DaysPer100Years * divider;
+                }
+                if(remainingDays >= 4)
+                {
+                    divider = (int)remainingDays / 4;
+                    remainingDays = Math.Round(((remainingDays / 4.0) - divider) * 4);
+                    sumDays += DaysPer4Years * divider;
+                }
+                if (remainingDays >= 1)
+                {
+                    divider = (int)remainingDays / 1;
+                    remainingDays = Math.Round(((remainingDays / 1.0) - divider) * 1);
+                    sumDays += DaysPerYear * divider;
+                }
             }
-            return false;
+            return sumDays;
         }
 
         /// <summary>
@@ -81,7 +116,7 @@ namespace DifferenceBetweenDates.Controller
             DateModel givenDateModel = new DateModel();
             //List to hold the result from Split method
             List<string> dateSplit;
-            long day, month, year;
+            int day, month, year;
             //Get the system date format
             string sysDateFormat = CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern;
             //If the system date format is MDY
@@ -102,9 +137,9 @@ namespace DifferenceBetweenDates.Controller
                         givenDateModel.Day = day;
                         for (int i = 1; i < month; i++)
                         {
-                            givenDateModel.Month += daysOfMonth[i + 1];
+                            givenDateModel.Month += daysOfMonth[i];
                         }
-                        givenDateModel.Year = year * tropicalYear;
+                        givenDateModel.Year = IsLeapYear(year);
 
                         return (long)givenDateModel.Year + givenDateModel.Month + givenDateModel.Day;
                     }
@@ -119,19 +154,19 @@ namespace DifferenceBetweenDates.Controller
                     //Splits the date using the allowed separators
                     dateSplit = GivenDate.Split('/', '-', '.').ToList();
 
-                    day = Convert.ToInt16(dateSplit[(int)MDYDate.Day]);
-                    month = Convert.ToInt16(dateSplit[(int)MDYDate.Month]);
-                    year = Convert.ToInt16(dateSplit[(int)MDYDate.Year]);
+                    day = Convert.ToInt16(dateSplit[(int)DMYDate.Day]);
+                    month = Convert.ToInt16(dateSplit[(int)DMYDate.Month]);
+                    year = Convert.ToInt16(dateSplit[(int)DMYDate.Year]);
                     //Validate February 29 on LeapYear
                     if (IsAValidDate(day, month, year))
                     {
                         //Calculate the amount of days of input date
-                        givenDateModel.Day = Convert.ToInt16(dateSplit[(int)DMYDate.Day]);
-                        for (int i = 0; i < Convert.ToInt16(dateSplit[(int)DMYDate.Month]); i++)
+                        givenDateModel.Day = day;
+                        for (int i = 1; i < month; i++)
                         {
-                            givenDateModel.Month += daysOfMonth[i + 1];
+                            givenDateModel.Month += daysOfMonth[i];
                         }
-                        givenDateModel.Year = Convert.ToInt16(dateSplit[(int)DMYDate.Year]) * tropicalYear;
+                        givenDateModel.Year = IsLeapYear(year);
 
                         return (long)givenDateModel.Year + givenDateModel.Month + givenDateModel.Day;
                     }
